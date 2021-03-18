@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ErrorControllerAdvice {
 
     @ExceptionHandler(CityNotFoundException.class)
-    public String catchException(){
+    public String catchException() {
         return "error";
     }
 }

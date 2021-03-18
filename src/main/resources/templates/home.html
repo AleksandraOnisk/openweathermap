@@ -15,40 +15,46 @@
     <h1>Pogodynka Olita</h1><br>
 
     <form action="/" method="get">
-            <input type="text" name="city" placeholder="Wpisz miejscowość"><br>
-            <input type="submit" value="Sprawdź pogodę">
+            <input type="text" name="city" placeholder="Wpisz miejscowość"><br><br>
+            <input type="submit" class="btn btn-primary mb-3" value="Sprawdź pogodę">
     </form>
 
     <div th:if="${weather != null}">
 
         <h1>Pogoda w mieście: </h1>
-        <h2 th:text="${weather.city}"></h2>
+        <h2 style="color: blue" th:text="${weather.city}"></h2>
 
         <table>
             <tbody th:object="${weather}">
             <tr>
                 <td>Temperatura:</td>
-                <td th:text="*{temperatureNow}">&deg C</td>
+                <td th:text="*{temperatureNow}">
+                <td> &deg C </td>
             </tr>
             <tr>
                 <td>Temperatura odczuwalna: </td>
-                <td th:text="*{temperatureFelt}">&deg C</td>
+                <td th:text="*{temperatureFelt}"></td>
+                <td> &deg C </td>
             </tr>
             <tr>
                 <td>Temperatura minimalna: </td>
-                <td th:text="*{temperatureMin}">&deg C</td>
+                <td th:text="*{temperatureMin}"></td>
+                <td> &deg C </td>
             </tr>
             <tr>
                 <td>Temperatura maxymalna: </td>
-                <td th:text="*{temperatureMax}">&deg C</td>
+                <td th:text="*{temperatureMax}"></td>
+                <td> &deg C </td>
             </tr>
             <tr>
                 <td>Ciśnienie: </td>
-                <td th:text="*{pressure}">hpa</td>
+                <td th:text="*{pressure}"></td>
+                <td> hPa </td>
             </tr>
             <tr>
                 <td>Wilgotność powietrza:</td>
-                <td th:text="*{humidity}">%</td>
+                <td th:text="*{humidity}"></td>
+                <td> % </td>
             </tr>
             </tbody>
         </table>

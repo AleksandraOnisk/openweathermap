@@ -15,7 +15,7 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    private String home (Model model, @RequestParam(required = false) String city){
+    private String home(Model model, @RequestParam(required = false) String city) {
         if (city != null) {
             model.addAttribute("weather", weatherService.getWeatherInTheCity(city));
         }
